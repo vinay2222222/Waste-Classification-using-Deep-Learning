@@ -95,9 +95,9 @@ It will:
 ---
 
 ## 📌 Next Steps
-- [ ] Add **RWC-Net model (DenseNet201 + MobileNetV2 fusion)**  
-- [ ] Implement **5-fold cross-validation training**  
-- [ ] Add **Score-CAM visualization** for interpretability  
+-  Add **RWC-Net model (DenseNet201 + MobileNetV2 fusion)**  
+-  Implement **5-fold cross-validation training**  
+-  Add **Score-CAM visualization** for interpretability  
 
 ---
 
