@@ -1,0 +1,6 @@
+torch>=1.11
+torchvision
+scikit-learn
+matplotlib
+opencv-python
+pytorch-grad-cam
