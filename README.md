@@ -141,7 +141,8 @@ RWC-Net-Waste-Classification/
 │── .gitignore
 │
 ├── data/
-│   └── trashnet/                   # Dataset
+│   |── dataset-resized/                   # Dataset
+|   |__ dataset_links.txt                  
 │
 ├── notebooks/
 │   ├── Preprocessing.ipynb         # Colab notebook (dataset + preprocessing)
