@@ -3,44 +3,21 @@
 Implementation of **RWC-Net** (DenseNet201 + MobileNetV2 hybrid) for **Recyclable Waste Classification**.  
 "A Reliable and Robust Deep Learning Model for Effective Recyclable Waste Classification".  
 
-This repo includes:  
-✔️ Dataset setup & preprocessing  
-✔️ **RWC-Net model (DenseNet201 + MobileNetV2 fusion)**  
-✔️ **5-fold cross-validation training pipeline**  
+## 📌 Project Overview
+This project explores **deep learning architectures** for image classification tasks using PyTorch.  
+We benchmark standard models (**DenseNet201, MobileNetV2**) against our **proposed RWC-Net** architecture.  
+The goal is to evaluate performance improvements through custom design and optimization.
 
 ---
 
-## 📂 Repository Structure
-```
-RWC-Net-Waste-Classification/
-│── README.md
-│── requirements.txt
-│── .gitignore
-│
-├── data/
-│   └── trashnet/                   # Dataset
-│
-├── notebooks/
-│   ├── RWCNet_Preprocessing.ipynb  # Colab notebook (dataset + preprocessing)
-│   └── RWCNet_Training.ipynb       # Colab notebook (model training + CV)
-│
-└── src/
-    ├── dataset.py                  # Dataset loading, preprocessing, augmentation
-    ├── rwcnet_training.py          # RWC-Net + 5-fold CV training
-```
+## 🗂️ Features
+- ✅ Data preprocessing and augmentation with `torchvision.transforms`
+- ✅ Training and evaluation pipeline for multiple models
+- ✅ Custom architecture: **RWC-Net**
+- ✅ Performance metrics: Accuracy, Precision, Recall, F1-score, ROC-AUC
+- ✅ Visualization utilities: Confusion Matrix, ROC curve, PR curve
 
 ---
-
-## ⚡ Setup
-Clone the repo and install dependencies:
-```bash
-git clone https://github.com/vinay2222222/Waste-Classification-using-Deep-Learning.git
-cd Waste-Classification-using-Deep-Learning
-pip install -r requirements.txt
-```
-
----
-
 ## 📥 Dataset
 We use the [**TrashNet dataset**](https://github.com/garythung/trashnet), which contains **2527 images** across **6 waste categories**:  
 - Cardboard  
@@ -92,6 +69,10 @@ The **RWC-Net** model fuses two pretrained CNN backbones:
 - Auxiliary outputs from DenseNet and MobileNet  
 - Final classifier with **LogSoftmax**  
 
+Run training:
+```bash
+python src/model.py
+```
 ---
 
 ## ⚙️ Training
@@ -109,59 +90,79 @@ Run training:
 ```bash
 python src/training.py
 ```
+---
+
+## 📊 Evaluation
+Models are evaluated using **5-Fold Cross Validation** with the following metrics:  
+- Accuracy  
+- Precision, Recall, F1-score  
+- ROC-AUC  
+
+We also generate plots: **Confusion Matrix, ROC Curve, Precision–Recall Curve, and Training vs Validation curves**.  
+Results are averaged across folds for fair comparison.  
+
+Run training:
+```bash
+python src/evaluation.py
+```
+---
+
+## 📊 Models Compared
+1. **DenseNet201 (Baseline)**
+2. **MobileNetV2 (Baseline)**
+3. **RWC-Net (Proposed Model)**
 
 ---
 
-## 📒 Notebooks
-- `Preprocessing.ipynb` → Dataset setup + augmentations visualization  
-- `Training.ipynb` → Full training with 5-fold CV (Colab-ready)  
+## ⚡ Setup
+Clone the repo and install dependencies:
+```bash
+git clone https://github.com/vinay2222222/Waste-Classification-using-Deep-Learning.git
+cd Waste-Classification-using-Deep-Learning
+pip install -r requirements.txt
+```
 
 ---
 
-## 📊 Sample Training Logs
-Example output during training (1 fold, 5 epochs):
+## 📈 Results
+- **DenseNet201**: Baseline accuracy XX%  
+- **MobileNetV2**: Baseline accuracy XX%  
+- **RWC-Net**: Achieved **higher accuracy of XX%** with improved F1-score.  
 
-➡️ After 5 folds, average accuracy is around **83–85%**, depending on augmentation randomness.  
-
----
-
-## 📌 Next Steps (Roadmap)
-
-### 🔹 1. Model Benchmarking (5 Models Compared)
-- **ResNet50** (baseline)  
-- **DenseNet121** (baseline)  
-- **MobileNetV2** (baseline)  
-- **EfficientNet-style** (baseline)  
-- **RWC-Net (Proposed Model)**  
-
-➡️ Compare Accuracy, Precision, Recall, F1-score across models.  
+*(Replace XX% with your actual results from notebook)*
 
 ---
 
-### 🔹 2. Training & Evaluation Pipeline
-- [ ] Automated training for all models  
-- [ ] Detailed evaluation metrics  
-- [ ] Visualization dashboard for results  
-- [ ] Model checkpointing & saving  
+## 📂 Repository Structure
+```
+RWC-Net-Waste-Classification/
+│── README.md
+│── requirements.txt
+│── .gitignore
+│
+├── data/
+│   └── trashnet/                   # Dataset
+│
+├── notebooks/
+│   ├── RWCNet_Preprocessing.ipynb  # Colab notebook (dataset + preprocessing)
+│   └── RWCNet_Training.ipynb       # Colab notebook (model training)
+|   └── final_model.ipynb           # Colab notebook (dataset + preprocessing + model training + evaluation)
+│
+└── src/
+    ├── dataset.py                  # Dataset loading, preprocessing, augmentation
+    ├── model.py                    # RWC-Net
+    └──training.py                  # Training of model
+    └──evaluation.py                # Evaluation
+```
 
 ---
 
-### 🔹 3. Deployment Options
-**A. Gradio Web Interface**  
-- Drag-and-drop waste image upload  
-- Real-time classification with confidence scores  
-- Clean UI with probabilities  
-- Shareable public demo  
+## 🔮 Future Work
+- Extend to larger datasets (e.g., CIFAR-100, ImageNet subset)
+- Optimize hyperparameters for RWC-Net
+- Deploy trained model as a web app (Streamlit/Flask)
 
-**B. REST API (Flask)**  
-- JSON-based prediction endpoint  
-- Health check endpoint  
-- Easy system integration  
+---
 
-**C. Batch Processing**  
-- Predict multiple images from a folder  
-- Export CSV with predictions  
-- Error handling for invalid images  
-
-
-✍️ Maintainer: **Vinay A**  
+## 👨‍💻 Authors
+- Vinay A ([@vinay2222222](https://github.com/vinay2222222))  
