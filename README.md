@@ -124,13 +124,13 @@ pip install -r requirements.txt
 
 ---
 
-## 📈 Results
-- **DenseNet201**: Baseline accuracy XX%  
-- **MobileNetV2**: Baseline accuracy XX%  
-- **RWC-Net**: Achieved **higher accuracy of XX%** with improved F1-score.  
+## 📊 Final Results:
 
-*(Replace XX% with your actual results from notebook)*
-
+  Best Validation Accuracy: 91.90%
+  Test Accuracy: 95.65%
+  Test F1-Score (Macro): 0.9608
+  Test ROC AUC (Macro): 0.9981
+  
 ---
 
 ## 📂 Repository Structure
@@ -144,8 +144,8 @@ RWC-Net-Waste-Classification/
 │   └── trashnet/                   # Dataset
 │
 ├── notebooks/
-│   ├── RWCNet_Preprocessing.ipynb  # Colab notebook (dataset + preprocessing)
-│   └── RWCNet_Training.ipynb       # Colab notebook (model training)
+│   ├── Preprocessing.ipynb         # Colab notebook (dataset + preprocessing)
+│   └── model.ipynb                 # Colab notebook (model training)
 |   └── final_model.ipynb           # Colab notebook (dataset + preprocessing + model training + evaluation)
 │
 └── src/
