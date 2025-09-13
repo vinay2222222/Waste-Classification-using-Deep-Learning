@@ -126,10 +126,10 @@ pip install -r requirements.txt
 
 ## 📊 Final Results:
 
-  Best Validation Accuracy: 91.90%
-  Test Accuracy: 95.65%
-  Test F1-Score (Macro): 0.9608
-  Test ROC AUC (Macro): 0.9981
+- Best Validation Accuracy: 91.90%
+- Test Accuracy: 95.65%
+- Test F1-Score (Macro): 0.9608
+- Test ROC AUC (Macro): 0.9981
   
 ---
 
