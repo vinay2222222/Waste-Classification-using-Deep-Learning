@@ -1,28 +1,24 @@
-# Ignore Python cache files
+# Python cache
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
-*.pyd
 
-# Ignore Jupyter Notebook checkpoints
+# Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# Ignore virtual environment folders
+# Virtual environments
+.venv/
 venv/
-.env/
+env/
 
-# Ignore dataset and large files
+# Data and results
 data/
-*.zip
-*.tar.gz
-
-# Ignore model checkpoints and logs
-checkpoints/
-runs/
-logs/
-*.pt
+results/
+*.csv
+*.h5
 *.pth
+*.pt
 
-# Ignore system files
+# OS files
 .DS_Store
 Thumbs.db
